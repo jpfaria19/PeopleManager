@@ -81,7 +81,7 @@ namespace DAL.Repository
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
-                        new Amigo()
+                        return new Amigo()
                         {
                             Id = reader.GetInt32(0),
                             Nome = reader.GetString(1),
