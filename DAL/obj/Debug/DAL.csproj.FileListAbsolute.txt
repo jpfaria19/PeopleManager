@@ -1,0 +1,7 @@
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\bin\Debug\DAL.dll
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\bin\Debug\DAL.pdb
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\bin\Debug\BLL.dll
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\bin\Debug\BLL.pdb
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\obj\Debug\DAL.dll
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\DAL\obj\Debug\DAL.pdb

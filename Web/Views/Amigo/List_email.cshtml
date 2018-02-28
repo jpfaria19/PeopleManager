@@ -1,0 +1,79 @@
+﻿@model IEnumerable<BLL.Domain.Amigo>
+
+@{
+    /**/
+
+    ViewBag.Title = "Lista email amigos";
+}
+
+<h2>Lista de email dos amigos</h2>
+
+<p>
+    @Html.ActionLink("Adicionar novo amigo", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            CheckBox
+        </th>
+        <th>
+            Nome Completo
+        </th>
+        <th>
+            E-mail
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.CheckBoxFor(modelItem => item.CheckBoxAmigo, new Dictionary<string, object>
+                   {
+                       {"amigoId", item.Id },
+                       {"onclick", "MarkCheckBox(this)" }
+                   })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome) @Html.DisplayFor(modelItem => item.SobreNome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section Scripts
+{
+    <script>
+        function MarkCheckBox(checkbox) {
+            if ($(checkbox).prop("checked") == true) {
+                $.ajax({
+                    url: "@Url.Action("MarkCheckBox", "Amigo")",
+                    type: "get",
+                    data: {
+                        amigoId: checkbox.getAttribute('amigoId')
+                    }
+                });
+            }
+            else {
+                $.ajax({
+                    url: "@Url.Action("MarkOffCheckBox", "Amigo")",
+                    type: "get",
+                    data: {
+                        amigoId: checkbox.getAttribute('amigoId')
+                    }
+                });
+            }
+        }
+    </script>
+}

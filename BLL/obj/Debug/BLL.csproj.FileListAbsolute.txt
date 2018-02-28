@@ -1,0 +1,5 @@
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\BLL\bin\Debug\BLL.dll
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\BLL\bin\Debug\BLL.pdb
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\BLL\obj\Debug\BLL.dll
+C:\Users\joao.lima\Desktop\git\.NET\ASP.NET\PeopleManager.TP1\BLL\obj\Debug\BLL.pdb
