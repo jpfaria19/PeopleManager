@@ -13,7 +13,7 @@ namespace DAL.Repository
     {
         SqlConnection connection;
         
-        string strConString = @"Server=tcp:friendmanager.database.windows.net,1433;Initial Catalog=Amigo;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+        string strConString = @"Server=tcp:friendmanager.database.windows.net,1433;Initial Catalog=Amigo;Persist Security Info=False;User ID=adm_friend;Password=WWWJpmg1904;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
         public IEnumerable<Amigo> GetAllAmigos()
         {
@@ -123,28 +123,5 @@ namespace DAL.Repository
                 cmd.ExecuteNonQuery();
             }
         }
-
-        //public void CreateAmigo(Amigo amigo)
-        //{
-        //    using (var connection = new SqlConnection(strConString))
-        //    {
-        //        var commandText = "INSERT INTO pessoa (nome, sobre_nome, email, data_aniversario) VALUES (@nome, @sobre_nome, @emial, @data_aniversario)";
-        //        var insertCommand = new SqlCommand(commandText, connection);
-        //        insertCommand.Parameters.AddWithValue("@nome", amigo.Nome);
-        //        insertCommand.Parameters.AddWithValue("@sobre_nome", amigo.SobreNome);
-        //        insertCommand.Parameters.AddWithValue("@email", amigo.Email);
-        //        insertCommand.Parameters.AddWithValue("@data_aniversario", amigo.Nascimento);
-        //        try
-        //        {
-        //            connection.Open();
-        //            insertCommand.ExecuteNonQuery();
-        //        }
-        //        finally
-        //        {
-
-        //            connection.Close();
-        //        }
-        //    }
-        //} 
     }
 }

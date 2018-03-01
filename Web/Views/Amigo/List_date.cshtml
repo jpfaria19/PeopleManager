@@ -50,28 +50,25 @@
 
 </table>
 
-@section Scripts
-{
-    <script>
-        function MarkCheckBox(checkbox) {
-            if ($(checkbox).prop("checked") == true) {
-                $.ajax({
-                    url: "@Url.Action("MarkCheckBox", "Amigo")",
-                    type: "get",
-                    data: {
-                        amigoId: checkbox.getAttribute('amigoId')
-                    }
-                });
-            }
-            else {
-                $.ajax({
-                    url: "@Url.Action("MarkOffCheckBox", "Amigo")",
-                    type: "get",
-                    data: {
-                        amigoId: checkbox.getAttribute('amigoId')
-                    }
-                });
-            }
+<script>
+    function MarkCheckBox(checkbox) {
+        if ($(checkbox).prop("checked") == true) {
+            $.ajax({
+                url: "@Url.Action("MarkCheckBox", "Amigo")",
+                type: "get",
+                data: {
+                    amigoId: checkbox.getAttribute('amigoId')
+                }
+            });
         }
-    </script>
-}
+        else {
+            $.ajax({
+                url: "@Url.Action("MarkOffCheckBox", "Amigo")",
+                type: "get",
+                data: {
+                    amigoId: checkbox.getAttribute('amigoId')
+                }
+            });
+        }
+    }
+</script>

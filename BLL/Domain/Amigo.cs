@@ -9,18 +9,7 @@ namespace BLL.Domain
 {
     public class Amigo
     {
-        //static int contador = 0;
-
         public Amigo() { }
-
-        //public Amigo(string amigoNome, string amigoSobreNome, string amigoEmail, DateTime amigoNascimento)
-        //{
-        //    Id = contador++;
-        //    Nome = amigoNome;
-        //    SobreNome = amigoSobreNome;
-        //    Email = amigoEmail;
-        //    Nascimento = amigoNascimento;
-        //}
 
         [Key]
         public int Id { get; set; }
@@ -38,15 +27,5 @@ namespace BLL.Domain
         public DateTime Nascimento { get; set; }
 
         public bool CheckBoxAmigo { get; set; }
-
-
-        //public List<Amigo> aniversarioAmigo { get; set; }
-        //public List<Amigo> closeAniversario { get; set; }
-        //public List<Amigo> emailAmigo { get; set; }
-
-        //public string Saudacao()
-        //{
-        //    return $"Olá, meu nome é {Nome}.";
-        //}
     }
 }

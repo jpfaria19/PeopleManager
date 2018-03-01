@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace Web.Controllers
 {
@@ -16,6 +17,14 @@ namespace Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        protected override void Initialize(RequestContext requestContext)
+        {
+            base.Initialize(requestContext);
+
+            if (Session["CheckAmigoID"] == null)
+                Session["CheckAmigoID"] = new List<int>();
         }
 
         // GET: Checkbox
@@ -30,21 +39,33 @@ namespace Web.Controllers
 
         public ActionResult MarkOffCheckBox(int amigoId)
         {
-            List<int> RemoveCheckBox = (List<int>)Session["RemoveCheckBox"];
+            List<int> RemoveCheckBox = (List<int>)Session["CheckAmigoID"];
             RemoveCheckBox.Remove(amigoId);
-            Session["RemoveCheckBox"] = RemoveCheckBox;
+            Session["CheckAmigoID"] = RemoveCheckBox;
 
             return Json(new { status = "OK" }, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult List_date()
         {
-            return View(amigoRepository.GetAllAmigos());
+            List<Amigo> mahFriends = (List<Amigo>) amigoRepository.GetAllAmigos();
+            List<int> markedFriends = (List<int>) Session["CheckAmigoID"];
+
+            foreach (var item in markedFriends)
+                mahFriends.Find(mf => mf.Id == item).CheckBoxAmigo = true;
+
+            return View(mahFriends);
         }
 
         public ActionResult List_email()
         {
-            return View(amigoRepository.GetAllAmigos());
+            List<Amigo> mahFriends = (List<Amigo>)amigoRepository.GetAllAmigos();
+            List<int> markedFriends = (List<int>)Session["CheckAmigoID"];
+
+            foreach (var item in markedFriends)
+                mahFriends.Find(mf => mf.Id == item).CheckBoxAmigo = true;
+
+            return View(mahFriends);
         }
 
         // GET: Amigo/Details/5
